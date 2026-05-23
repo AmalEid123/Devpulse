@@ -326,12 +326,22 @@ export default function DeveloperPage() {
                   )}
                 </div>
                 <div className="flex gap-3">
-                  <button className="px-4 py-2.5 bg-white/10 backdrop-blur rounded-xl text-sm font-medium hover:bg-white/20 transition-colors flex items-center gap-2">
+                  <a
+                    href={user.email ? `mailto:${user.email}` : user.html_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-4 py-2.5 bg-white/10 backdrop-blur rounded-xl text-sm font-medium hover:bg-white/20 transition-colors flex items-center gap-2"
+                  >
                     <MessageSquare className="w-4 h-4" /> Message
-                  </button>
-                  <button className="px-4 py-2.5 bg-[var(--color-primary)] rounded-xl text-sm font-medium hover:bg-[var(--color-primary-hover)] transition-colors flex items-center gap-2 shadow-lg">
+                  </a>
+                  <a
+                    href={user.html_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-4 py-2.5 bg-[var(--color-primary)] rounded-xl text-sm font-medium hover:bg-[var(--color-primary-hover)] transition-colors flex items-center gap-2 shadow-lg"
+                  >
                     <UserPlus className="w-4 h-4" /> Follow
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
